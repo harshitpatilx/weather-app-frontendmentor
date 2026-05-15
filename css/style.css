@@ -96,15 +96,32 @@ main {
     padding: 0 15px;
 }
 
-.weatherStats .headStats {
-    background: url(../assets/images/bg-today-large.svg);
-    height: 286px;
+.weatherStats >*{
     padding: 0 15px;
+}
+
+.headStats > div{
+    
+    z-index: 2;
     box-sizing: content-box;
     background-repeat: no-repeat;
     background-position: bottom;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    height: 300px;
+    width: 100%;
+}
+
+.headStats >  img{
+    position: absolute;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.weatherStats .headStats {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
 }
 
 .headStats .grp1 {
@@ -123,7 +140,6 @@ main {
 
 .headStats .grp2 {
     display: flex;
-    width: 50%;
     align-content: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -142,13 +158,12 @@ main {
 }
 
 
-.fhwpContainer {
-    margin: 20px 0;
+.weatherStats .fhwpContainer {
+    margin: 30px 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     height: 8rem;
-    padding: 0px 5px;
     gap: 20px;
 }
 
@@ -214,7 +229,7 @@ main {
     background: var(--neutral-800);
     padding: 20px 15px;
     overflow: auto;
-    height: 100vh;
+    height: 107vh;
 }
 
 .hr-section-head {
@@ -259,7 +274,7 @@ main {
     width: 100%;
     text-align: end;}
 
-.hourCard .weatherStat img{
+.hourCard .hourlyWeatherIcon img{
     width: 2em;
 
 }
