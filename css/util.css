@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root{
+    /* colors */
+    --neutral-900: hsl(243, 96%, 9%);
+    --neutral-800: hsl(243, 27%, 20%);
+    --neutral-700: hsl(243, 23%, 24%);
+    --neutral-600: hsl(243, 23%, 30%);
+    --neutral-300: hsl(240, 6%, 70%);
+    --neutral-200: hsl(250, 6%, 84%);
+    --neutral-0: hsl(0, 0%, 100%);
+
+    --orange-500: hsl(28, 100%, 52%);
+
+    --blue-500: hsl(233, 67%, 56%);
+    --blue-700: hsl(248, 70%, 36%);
+
+    /* Typography */
+    font-size: 18px;
+    --font-family-primary: 'DM sans', sans-serif; /* font-weight  300, 500, 600, 600i, 700 */
+    --font-family-secondary: "Bricolage Grotesque", sans-serif; /* font weight 700 */
+
+    /* Layouts: Desktop-1440px Mobile-375px*/
+}
+
+/* Scroll Bar */
+
+/* Works on Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f1115; /* dark background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2c2f36, #1a1c22);
+  border-radius: 8px;
+  border: 2px solid #0f1115; /* gives padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #3a3f47, #242830);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    padding: 25px 0;
+}
+
+button{
+    border: none;
+    outline: none;
+}
+
+button:focus  {
+    border: 1px solid var(--neutral-200);
+}
+
+button:active  {
+    border: 1px solid var(--neutral-200);
+}
+
+.card{
+    background-color: var(--neutral-600);
+    border-radius: 20px;
+    display: flex;
+}

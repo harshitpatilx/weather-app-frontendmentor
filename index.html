@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Weather app</title>
+  <link rel="stylesheet" href="css/util.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo"><img src="./assets/images/logo.svg" alt=""></div>
+    <button id="unitBtn"> <img src="./assets/images/icon-units.svg" alt=""> Units <img
+        src="./assets/images/icon-dropdown.svg" alt=""></button>
+    <div class="dropdown">
+      <div class="drophead">Switch to Imperial/Metric</div>
+
+      <div class="drophead">
+        <span class="dropheadTitle">Temperature</span>
+        <form action="">
+          <input type="radio" id="celcius" name="temperature_unit" value="Celcius" checked>
+          <label for="celcius">Celcius (°C)</label><br>
+          <input type="radio" id="fahrenheit" name="temperature_unit" value="Fahrenheit">
+          <label for="fahrenheit">Fahrenheit (°F)</label><br>
+        </form>
+      </div>
+      <div class="drophead">
+        <span class="dropheadTitle">Wind Speed</span>
+        <form action="">
+          <input type="radio" id="kmph" name="windspeed_unit" value="kmph" checked>
+          <label for="kmph">km/h</label><br>
+          <input type="radio" id="mph" name="windspeed_unit" value="mph">
+          <label for="mph">mph</label><br>
+        </form>
+      </div>
+      <div class="drophead">
+        <span class="dropheadTitle">Precipitation</span>
+        <form action="">
+          <input type="radio" id="millimeter" name="ppt_unit" value="millimeter" checked>
+          <label for="millimeter">Millimeters (mm)</label><br>
+          <input type="radio" id="inches" name="ppt_unit" value="inches">
+          <label for="inches">Inches (in)</label><br>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <section class="masterHeadingSection">
+    <h1 class="masterHeading">How's the sky looking today?</h1>
+  </section>
+
+  <section class="searchBar">
+    <form action="">
+      <div class="searchBoxContainer">
+        <img src="./assets/images/icon-search.svg" alt="" for="search">
+        <input type="search" name="search" id="search" placeholder="Search for a place...">
+      </div>
+      <button type="button">Search</button>
+    </form>
+    <div class="searchResults"></div>
+  </section>
+  <main>
+    <section class="weatherStats">
+      <div class="headStats">
+        <div class="grp1">
+          <div class="currentLocation" id="currentLocation">Delhi, India</div>
+          <div class="todaysDate" id="todaysDate">Thursday, May 14, 2026</div>
+        </div>
+        <div class="grp2">
+          <img src="./assets/images/icon-overcast.webp" alt="">
+          <div class="currentTemperature" id='currentTemp'>°</div>
+        </div>
+      </div>
+      <div class="fhwpContainer">
+        <div class="card fhwp">
+          <div class="cardTitle">Feels like</div>
+          <div class="cardValue" id="feelslikeTemp">°</div>
+        </div>
+        <div class="card fhwp">
+          <div class="cardTitle">Humidity</div>
+          <div class="cardValue" id="currentHumidity"> % </div>
+        </div>
+        <div class="card fhwp">
+          <div class="cardTitle">Wind</div>
+          <div class="cardValue" id="windSpeed">km/h</div>
+        </div>
+        <div class="card fhwp">
+          <div class="cardTitle">Precipitation</div>
+          <div class="cardValue" id="currentPpt">0 mm</div>
+        </div>
+      </div>
+      <div class="dailyForecast">
+        <div class="sectionTitle">Daily forecast</div>
+        <div class="weekForecastContainer">
+          <div class="card wfc">
+            <div class="day">Tue</div>
+            <div class="weatherIcon"><img src="./assets/images/icon-fog.webp" alt=""></div>
+            <div class="temperatures">
+              <div class="tempHigh">20°</div>
+              <div class="tempLow">20°</div>
+            </div>
+          </div>
+          <div class="card wfc">
+            <div class="day">Tue</div>
+            <div class="weatherIcon"><img src="./assets/images/icon-fog.webp" alt=""></div>
+            <div class="temperatures">
+              <div class="tempHigh">20°</div>
+              <div class="tempLow">20°</div>
+            </div>
+          </div>
+          <div class="card wfc">
+            <div class="day">Tue</div>
+            <div class="weatherIcon"><img src="./assets/images/icon-fog.webp" alt=""></div>
+            <div class="temperatures">
+              <div class="tempHigh">20°</div>
+              <div class="tempLow">20°</div>
+            </div>
+          </div>
+          <div class="card wfc">
+            <div class="day">Tue</div>
+            <div class="weatherIcon"><img src="./assets/images/icon-fog.webp" alt=""></div>
+            <div class="temperatures">
+              <div class="tempHigh">20°</div>
+              <div class="tempLow">20°</div>
+            </div>
+          </div>
+          <div class="card wfc">
+            <div class="day">Tue</div>
+            <div class="weatherIcon"><img src="./assets/images/icon-fog.webp" alt=""></div>
+            <div class="temperatures">
+              <div class="tempHigh">20°</div>
+              <div class="tempLow">20°</div>
+            </div>
+          </div>
+          <div class="card wfc">
+            <div class="day">Tue</div>
+            <div class="weatherIcon"><img src="./assets/images/icon-fog.webp" alt=""></div>
+            <div class="temperatures">
+              <div class="tempHigh">20°</div>
+              <div class="tempLow">20°</div>
+            </div>
+          </div>
+          <div class="card wfc">
+            <div class="day">Tue</div>
+            <div class="weatherIcon"><img src="./assets/images/icon-fog.webp" alt=""></div>
+            <div class="temperatures">
+              <div class="tempHigh">20°</div>
+              <div class="tempLow">20°</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hourlyforecast">
+      <div class="hr-section-head">
+        <div class="sectionTitle">Hourly forecast</div>
+        <div class="daySelector">
+          <form action="">
+            <select name="days" id="daySelector">
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+              <option value="sunday">Sunday</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <div class="hourCardContainer">
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+        <div class="hourCard">
+          <div class="weatherStat"><img src="./assets/images/icon-fog.webp" alt=""></div>
+          <div class="hour">3 PM</div>
+          <div class="hourTemp">20°</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/harshitpatilx">Harshit</a>.
+  </footer>
+
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
