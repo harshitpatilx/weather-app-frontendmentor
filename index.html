@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
 
   <title>Frontend Mentor | Weather app</title>
+
   <link rel="stylesheet" href="css/util.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,9 +16,9 @@
 <body>
 
   <header>
-    <div class="logo"><img src="./assets/images/logo.svg" alt=""></div>
-    <button id="unitBtn"> <img src="./assets/images/icon-units.svg" alt=""> Units <img
-        src="./assets/images/icon-dropdown.svg" alt=""></button>
+    <div class="logo"><img src="./assets/logo.svg" alt=""></div>
+    <button id="unitBtn"> <img src="./assets/icons/icon-units.svg" alt=""> Units <img
+        src="./assets/icons/icon-dropdown.svg" alt=""></button>
     <div class="dropdown">
       <div class="drophead">Switch to Imperial/Metric</div>
 
@@ -58,109 +59,110 @@
   <section class="searchBar">
     <form action="">
       <div class="searchBoxContainer">
-        <img src="./assets/images/icon-search.svg" alt="" for="search">
+        <img src="./assets/icons/icon-search.svg" alt="" for="search">
         <input type="search" name="search" id="search" placeholder="Search for a place...">
       </div>
       <button type="button">Search</button>
     </form>
     <div class="searchResults"></div>
   </section>
-  <main>
-    <section class="weatherStats">
-      <div class="headStats">
-        <img src="./assets/images/bg-today-large.svg" alt="">
-        <div>
-          <div class="grp1">
-            <div class="currentLocation" id="currentLocation">Delhi, India</div>
-            <div class="todaysDate" id="todaysDate">Thursday, May 14, 2026</div>
-          </div>
-          <div class="grp2" id="HeadStatIconContainer">
-            <div class="currentTemperature" id='currentTemp'>°</div>
-          </div>
-        </div>
-      </div>
-      <div class="fhwpContainer">
-        <div class="card fhwp">
-          <div class="cardTitle">Feels like</div>
-          <div class="cardValue" id="feelslikeTemp">°</div>
-        </div>
-        <div class="card fhwp">
-          <div class="cardTitle">Humidity</div>
-          <div class="cardValue" id="currentHumidity"> % </div>
-        </div>
-        <div class="card fhwp">
-          <div class="cardTitle">Wind</div>
-          <div class="cardValue" id="windSpeed">km/h</div>
-        </div>
-        <div class="card fhwp">
-          <div class="cardTitle">Precipitation</div>
-          <div class="cardValue" id="currentPpt">0 mm</div>
-        </div>
-      </div>
-      <div class="dailyForecast">
-        <div class="sectionTitle">Daily forecast</div>
-        <div class="weekForecastContainer">
-          <div class="card wfc">
-            <div class="day"></div>
-            <div class="weatherIcon"></div>
-            <div class="temperatures">
-              <div class="tempHigh"></div>
-              <div class="tempLow"></div>
-            </div>
-          </div>
-          <div class="card wfc">
-            <div class="day"></div>
-            <div class="weatherIcon"></div>
-            <div class="temperatures">
-              <div class="tempHigh"></div>
-              <div class="tempLow"></div>
-            </div>
-          </div>
-          <div class="card wfc">
-            <div class="day"></div>
-            <div class="weatherIcon"></div>
-            <div class="temperatures">
-              <div class="tempHigh"></div>
-              <div class="tempLow"></div>
-            </div>
-          </div>
-          <div class="card wfc">
-            <div class="day"></div>
-            <div class="weatherIcon"></div>
-            <div class="temperatures">
-              <div class="tempHigh"></div>
-              <div class="tempLow"></div>
-            </div>
-          </div>
-          <div class="card wfc">
-            <div class="day"></div>
-            <div class="weatherIcon"></div>
-            <div class="temperatures">
-              <div class="tempHigh"></div>
-              <div class="tempLow"></div>
-            </div>
-          </div>
-          <div class="card wfc">
-            <div class="day"></div>
-            <div class="weatherIcon"></div>
-            <div class="temperatures">
-              <div class="tempHigh"></div>
-              <div class="tempLow"></div>
-            </div>
-          </div>
-          <div class="card wfc">
-            <div class="day"></div>
-            <div class="weatherIcon"></div>
-            <div class="temperatures">
-              <div class="tempHigh"></div>
-              <div class="tempLow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="hourlyforecast">
+  <main>
+    <!-- Div 1 -->
+    <div class="currentWeather">
+      <div class="subBox1">
+        <span id="currentLocation"></span>
+        <span id="currentDate"></span>
+      </div>
+      <div class="subBox2">
+        <div id='currentTemperature'></div>
+      </div>
+
+
+    </div>
+    <!-- Div 2 -->
+    <div class="cardFL fhwpCards">
+      <span class="fhwpTitle">Feels Like</span>
+      <span id="currappTemperature" class="fhwpValues"></span>
+    </div>
+    <!-- Div 3 -->
+    <div class="cardH fhwpCards">
+      <span class="fhwpTitle">Humidity</span>
+      <span id="currHumidity" class="fhwpValues"></span>
+    </div>
+    <!-- Div 4 -->
+    <div class="cardWS fhwpCards">
+      <span class="fhwpTitle">Wind</span>
+      <span id="currwindSpeed" class="fhwpValues"></span>
+    </div>
+    <!-- Div 5 -->
+    <div class="cardPPT fhwpCards">
+      <span class="fhwpTitle">Precipitation</span>
+      <span id="currPpt" class="fhwpValues"></span>
+    </div>
+    <!-- Div 6 -->
+    <div class="dailyForecasts">
+      <span class="DFtitle">Daily forecast</span>
+      <div class="dayContainer">
+        <div class="days">
+          <div class="day"> </div>
+          <img src="./assets/weather_icons/icon-partly-cloudy.webp" alt="" class="dayWeatherIcon">
+          <div class="dayTemp">
+            <div class="daylowtemp">20°</div>
+            <div class="dayhightemp">14°</div>
+          </div>
+        </div>
+        <div class="days">
+          <div class="day"> </div>
+          <img src="./assets/weather_icons/icon-partly-cloudy.webp" alt="" class="dayWeatherIcon">
+          <div class="dayTemp">
+            <div class="daylowtemp">20°</div>
+            <div class="dayhightemp">14°</div>
+          </div>
+        </div>
+        <div class="days">
+          <div class="day"> </div>
+          <img src="./assets/weather_icons/icon-partly-cloudy.webp" alt="" class="dayWeatherIcon">
+          <div class="dayTemp">
+            <div class="daylowtemp">20°</div>
+            <div class="dayhightemp">14°</div>
+          </div>
+        </div>
+        <div class="days">
+          <div class="day"> </div>
+          <img src="./assets/weather_icons/icon-partly-cloudy.webp" alt="" class="dayWeatherIcon">
+          <div class="dayTemp">
+            <div class="daylowtemp">20°</div>
+            <div class="dayhightemp">14°</div>
+          </div>
+        </div>
+        <div class="days">
+          <div class="day"> </div>
+          <img src="./assets/weather_icons/icon-partly-cloudy.webp" alt="" class="dayWeatherIcon">
+          <div class="dayTemp">
+            <div class="daylowtemp">20°</div>
+            <div class="dayhightemp">14°</div>
+          </div>
+        </div>
+        <div class="days">
+          <div class="day"> </div>
+          <img src="./assets/weather_icons/icon-partly-cloudy.webp" alt="" class="dayWeatherIcon">
+          <div class="dayTemp">
+            <div class="daylowtemp">20°</div>
+            <div class="dayhightemp">14°</div>
+          </div>
+        </div>
+        <div class="days">
+          <div class="day"> </div>
+          <img src="./assets/weather_icons/icon-partly-cloudy.webp" alt="" class="dayWeatherIcon">
+          <div class="dayTemp">
+            <div class="daylowtemp">20°</div>
+            <div class="dayhightemp">14°</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hourlyForecast">
       <div class="hr-section-head">
         <div class="sectionTitle">Hourly forecast</div>
         <div class="daySelector">
@@ -179,20 +181,20 @@
       </div>
       <div class="hourCardContainer">
         <div class="hourCard">
-          <div class="hourlyWeatherIcon"><img src="./assets/images/weather_icons/icon-rain.webp" alt=""></div>
+          <div class="hourlyWeatherIcon"><img src="./assets/weather_icons/icon-rain.webp" alt=""></div>
           <div class="hour">3 PM</div>
           <div class="hourTemp">20°</div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
+
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="https://github.com/harshitpatilx">Harshit</a>.
   </footer>
 
-
-  <script src="./main.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>

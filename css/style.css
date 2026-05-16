@@ -1,11 +1,12 @@
 * {
-    color: var(--neutral-0);
+    color: var(--primary-white);
     font-family: var(--font-family-primary);
 }
 
 body {
-    background: var(--neutral-900);
+    background: var(--main-bg);
 }
+
 
 header {
     /* border: 1px solid red; */
@@ -23,7 +24,7 @@ header {
     padding: 10px;
     border-radius: 10px;
     gap: 0.8em;
-    background-color: var(--neutral-600);
+    background-color: var(--bg-btn);
     cursor: pointer;
 }
 
@@ -35,7 +36,6 @@ header {
     font-family: var(--font-family-secondary);
     text-align: center;
     font-size: 3rem;
-
 }
 
 .searchBar form {
@@ -50,14 +50,14 @@ header {
     justify-content: flex-start;
     width: 40vw;
     padding: 0px 10px;
-    background: var(--neutral-600);
+    background: var(--bg-back);
     border-radius: 10px;
     margin: 10px;
     cursor: pointer;
 }
 
 .searchBoxContainer:focus-within {
-    border: 1px solid var(--neutral-200);
+    border: 1px solid var(--primary-white);
 }
 
 .searchBoxContainer input {
@@ -75,153 +75,173 @@ header {
     padding: 10px;
     font-size: 1rem;
     border-radius: 10px;
-    background: var(--blue-500);
+    background: var(--blue-light);
     border: none;
     outline: none;
     cursor: pointer;
 }
 
+
 main {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    width: 90%;
-    margin: 0 auto;
-    padding: 10px 20px;
-    gap: 15px;
-    align-items: start; 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    height: 85vh;
+    width: 80vw;
+    margin: 2em auto;
 }
 
-.weatherStats {
-    padding: 0;
-    padding: 0 15px;
+main>* {
+    /* border: 1px solid rgb(204, 107, 107); */
+    height: 100%;
+    border-radius: 10px;
 }
 
-.weatherStats >*{
-    padding: 0 15px;
-}
-
-.headStats > div{
-    
-    z-index: 2;
-    box-sizing: content-box;
-    background-repeat: no-repeat;
-    background-position: bottom;
+/* Div1 */
+.currentWeather {
+    grid-area: 1 / 1 / 4 / 5;
+    background-color: var(--bg-back);
     display: flex;
-    justify-content: space-around;
-    height: 300px;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('../assets/bg/bg-today-large.png');
+    background-size: cover;
     width: 100%;
+    height: 100%;
+    background-position: bottom;
+    padding: 10px;
 }
 
-.headStats >  img{
-    position: absolute;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.weatherStats .headStats {
-    display: flex;
-    position: relative;
-    justify-content: space-around;
-}
-
-.headStats .grp1 {
+.subBox1{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 10px;
-    padding: 20px;
 }
 
-.currentLocation {
-    font-size: 1.5rem;
+#currentLocation{
+    font-size: 1.5em;
     font-weight: 600;
+    margin: 10px 0;
+    line-height: 15px;
 }
 
-.headStats .grp2 {
+#currentDate{
+    color: var(--secondary-white);
+}
+
+.subBox2{
     display: flex;
-    align-content: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-.grp2 .currentTemperature {
-    font-size: 4.5rem;
+#currentWeatherIcon{
+    width: 6em;
+}
+
+#currentTemperature{
+    font-size: 4.5em;
     display: flex;
     align-items: center;
     font-weight: 600;
     font-style: italic;
 }
 
-.headStats .grp2 img {
-    width: 6rem;
-}
-
-
-.weatherStats .fhwpContainer {
-    margin: 30px 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 100%;
-    height: 8rem;
-    gap: 20px;
-}
-
-.fhwp {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+.fhwpCards{
+    background-color: var(--bg-back);
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.fhwp .cardTitle {
-    color: var(--neutral-200);
+.fhwpTitle{
+    color: var(--secondary-white);
+    font-size: 0.8em;
 }
 
-.fhwp .cardValue {
-    color: var(--neutral-0);
-    font-size: 1.5rem;
+.fhwpValues{
+    /* color: red; */
+    font-size: 1.3em;
 }
 
-.dailyForecast {
-    margin-top: 40px;
+/* Div 2 */
+.cardFL {
+    grid-area: 4 / 1 / 5 / 2;
 }
 
-.sectionTitle {
-    color: var(--neutral-0);
-    font-size: 1.2rem;
+/* Div 3 */
+.cardH {
+    grid-area: 4 / 2 / 5 / 3;
 }
 
-.weekForecastContainer {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+/* Div 4 */
+.cardWS {
+    grid-area: 4 / 3 / 5 / 4;
+}
+
+/* Div 5 */
+.cardPPT {
+    grid-area: 4 / 4 / 5 / 5;
+}
+
+/* Div 6 */
+.dailyForecasts {
+    grid-area: 5 / 1 / 7 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+.DFtitle{
+    font-weight: 500;
+    font-size: 1em;
     padding: 10px 0;
 }
 
-.weekForecastContainer .wfc {
+.dayContainer{
+    display: flex;
+    gap: 1em;
+    overflow: auto;
+}
+
+.days{
+    background-color: var(--bg-back);
+    padding: 10px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-
+    border-radius: 10px;
 }
 
-.wfc>*{
-    margin: 0.5em;
-
+.dayWeatherIcon{
+    width: 3em;
+    margin: 10px 0;
 }
 
-.wfc .temperatures {
+.dayTemp{
     display: flex;
-    font-size: 0.8em;
+    align-items: center;
     justify-content: space-between;
+    font-size: 0.8em;
     width: 100%;
 }
 
-.wfc .weatherIcon img {
-    width: 2em;
+
+/* Div 7 */
+.hourlyForecast {
+    background-color: var(--bg-back);
+    grid-area: 1 / 5 / 7 / 7;
+    display: none;
 }
+
+
 
 
 .hourlyforecast {
@@ -255,7 +275,7 @@ main {
 }
 
 .hourCard{
-    /* border: 1px solid red; */
+    border: 1px solid red; 
     padding: 10px;
     margin: 10px 0;
     display: flex;
@@ -281,12 +301,16 @@ main {
 
 
 
+
+
 /* Footer */
 .attribution {
-    font-size: 0.6875rem;
+    font-size: 0.7rem;
     text-align: center;
+    color: var(--off-white);
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--secondary-white);
+    
 }

@@ -2,18 +2,18 @@
 
 :root{
     /* colors */
-    --neutral-900: hsl(243, 96%, 9%);
-    --neutral-800: hsl(243, 27%, 20%);
-    --neutral-700: hsl(243, 23%, 24%);
-    --neutral-600: hsl(243, 23%, 30%);
-    --neutral-300: hsl(240, 6%, 70%);
-    --neutral-200: hsl(250, 6%, 84%);
-    --neutral-0: hsl(0, 0%, 100%);
+    --main-bg: #03012d;
+    --bg-front: #272541;
+    --bg-btn: #312f4b;
+    --bg-back: #3d3b5e;
+    --off-white: #aeaeb7;
+    --secondary-white: #d5d4d9;
+    --primary-white: #ffffff;
 
-    --orange-500: hsl(28, 100%, 52%);
+    --orange-500: #ff7c0a;
 
-    --blue-500: hsl(233, 67%, 56%);
-    --blue-700: hsl(248, 70%, 36%);
+    --blue-light: #4455da;
+    --blue-dark: #2d1c9c;
 
     /* Typography */
     font-size: 18px;
@@ -58,18 +58,9 @@ section{
 button{
     border: none;
     outline: none;
+    background: var(--bg-btn);
 }
 
 button:focus  {
-    border: 1px solid var(--neutral-200);
-}
-
-button:active  {
-    border: 1px solid var(--neutral-200);
-}
-
-.card{
-    background-color: var(--neutral-800);
-    border-radius: 20px;
-    display: flex;
+    border: 1px solid var(--secondary-white);
 }

@@ -1,4 +1,4 @@
-# Design files (please do not remove 🙂)
+# Design files 
 *.sketch
 *.fig
 *.xd
@@ -43,6 +43,3 @@ Thumbs.db
 /README-template.md
 /style-guide.md
 /weather-codes.md
-
-# I dont want fonts
-/assets/fonts
