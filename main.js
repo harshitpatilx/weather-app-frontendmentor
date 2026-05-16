@@ -19,14 +19,14 @@ async function getCoordinates(city) {
 }
 
 function getWeatherIcon(weatherCode) {
-  wc_sunny = [0, 1] // clear, mainly clear
-  wc_partlycloudy = [2] //partly cloudy
-  wc_overcast = [3] //overcast
-  wc_drizzle = [51, 53, 55, 56, 57] //Drizzle: Light, moderate, and dense intensity and Freezing Drizzle: Light and dense intensity
-  wc_fog = [45, 48] //Fog and depositing rime fog
-  wc_rain = [61, 63, 65, 66, 67, 80, 81, 82] //Rain: Slight, moderate and heavy intensity, Freezing Rain: Light and heavy intensity, Rain showers: Slight, moderate, and violent
-  wc_snow = [71, 73, 75, 77, 85, 86] //Snow fall: Slight, moderate, and heavy intensity, Snow grains, Snow showers slight and heavy
-  wc_storm = [95, 96, 97] //Thunderstorm: Slight or moderate
+  wc_sunny = [0, 1] 
+  wc_partlycloudy = [2] 
+  wc_overcast = [3] 
+  wc_drizzle = [51, 53, 55, 56, 57] 
+  wc_fog = [45, 48] 
+  wc_rain = [61, 63, 65, 66, 67, 80, 81, 82] 
+  wc_snow = [71, 73, 75, 77, 85, 86] 
+  wc_storm = [95, 96, 97] 
   let weatherImg = './assets/weather_icons/icon-sunny.webp'
   if (wc_sunny.includes(weatherCode)) {
     weatherImg = './assets/weather_icons/icon-sunny.webp'
@@ -60,7 +60,6 @@ function getWeatherInfo(weatherCode){
 
 function getDailyForecast(daily, daily_units){
   let cards = document.getElementsByClassName('days');
-  // console.log(cards)
   for (let day = 0; day < 7; day++) {
     const todaysDay = new Date(daily.time[day]).toLocaleDateString('en-US', { weekday: 'short' });
     const weatherImg = getWeatherIcon(daily.weather_code[day]);
@@ -90,7 +89,7 @@ async function main() {
   b = await a
   // console.log(b)
 
-  // head Stats
+  // Main Stats
   document.getElementById('currentTemperature').innerHTML = `${Math.ceil(b.current.temperature_2m)}°`;
   const todaysDay = new Date(b.current.time).toLocaleDateString('en-US', { weekday: 'long' });
   const todaysDate = new Date(b.current.time).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
@@ -98,7 +97,6 @@ async function main() {
 
   const currentLocation = await getCity(b.latitude, b.longitude)
   document.getElementById('currentLocation').innerHTML = currentLocation;
-
 
   let weatherImg = getWeatherIcon(b.current.weather_code)
   let weatherInfo = getWeatherInfo(b.current.weather_code)
